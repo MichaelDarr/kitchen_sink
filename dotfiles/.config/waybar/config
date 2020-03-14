@@ -1,0 +1,50 @@
+{
+    "layer": "top",
+    "modules-left": ["sway/workspaces"],
+    "modules-center": [],
+    "modules-right": ["custom/updates", "pulseaudio", "clock"],
+    "position": "top",
+    "battery": {
+        "bat": "BAT0",
+        "format": "{icon} {capacity}%",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "clock": {
+        "format": "{:%a, %I:%M     %D}"
+    },
+    "network": {
+        "interface": "INTERFACE",
+        "format": "{ifname}",
+        "format-wifi": "",
+        "format-ethernet": "{ifname} ",
+        "format-disconnected": "", //An empty format will hide the module.
+        "tooltip-format": "{ifname}",
+        "tooltip-format-wifi": "",
+        "tooltip-format-ethernet": "{ifname} ",
+        "tooltip-format-disconnected": "Disconnected",
+        "max-length": 50
+    },
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-bluetooth": "{icon}{volume}%",
+        "format-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", ""]
+        },
+        "scroll-step": 1,
+        "on-click": "termite -e pulsemixer"
+    },
+    "custom/spotify": {
+        "format": " {}",
+        "interval": 30,
+        "max-length": 40,
+        "exec": "~/.config/scripts/spotify.py 2> /dev/null",
+        "exec-if": "pgrep spotify"
+    }
+}

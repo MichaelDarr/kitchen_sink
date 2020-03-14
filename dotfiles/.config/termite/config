@@ -1,0 +1,5 @@
+[options]
+font = Roboto Mono 12
+
+[colors]
+background = rgba(25, 25, 25, 0.9)

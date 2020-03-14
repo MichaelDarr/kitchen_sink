@@ -1,0 +1,43 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    font-size: 18px;
+}
+
+window#waybar {
+    color: @foreground;
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    background: @background;
+}
+
+#workspaces button {
+    color: @foreground;
+    padding: 5px 8px 2px 8px;
+}
+
+#workspaces button.visible {
+    color: @background;
+    background: @color1;
+}
+
+#battery, #clock, #custom-spotify, #custom-updates, #mode, #network, #pulseaudio {
+    color: @foreground;
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    padding: 5px 20px 2px 20px;
+}
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: black;
+    }
+}
+
+#battery.warning:not(.charging) {
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
