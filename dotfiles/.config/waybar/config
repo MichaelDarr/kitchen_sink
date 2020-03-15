@@ -46,5 +46,10 @@
         "max-length": 40,
         "exec": "~/.config/scripts/spotify.py 2> /dev/null",
         "exec-if": "pgrep spotify"
+    },
+    "custom/updates": {
+        "interval": 300,
+        "max-length": 40,
+        "exec": "~/.config/scripts/updates.sh 2> /dev/null"
     }
 }
