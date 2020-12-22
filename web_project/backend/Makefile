@@ -26,7 +26,7 @@ dev: ## run in dev mode (autoreloading enabled, requires gin)
 	go mod download
 	gin --immediate \
 		--port=3000 \
-		--bin=$(BIN)$(APP) \
+		--bin=$(BIN)/$(APP) \
 		--build ./cmd/$(APP) \
 		--buildArgs="$(GOFLAGS) $(EXTRA_GOFLAGS)" \
 		run 
