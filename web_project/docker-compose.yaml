@@ -1,0 +1,24 @@
+version: '3.7'
+services:
+    frontend:
+        build:
+            context: ./frontend
+        ports:
+            - "8080:8080"
+        environment:
+            PORT: 8080
+        depends_on:
+            - "backend"
+        volumes:
+            - "./frontend:/mnt"
+        working_dir: /mnt
+    backend:
+        build:
+            context: ./backend
+        environment:
+            PORT: 3000
+        ports:
+            - "3000:3000"
+        volumes:
+            - "./backend/:/mnt"
+        working_dir: /mnt
