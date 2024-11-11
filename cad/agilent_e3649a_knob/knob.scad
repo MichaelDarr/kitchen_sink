@@ -46,16 +46,16 @@ difference() {
                         linear_extrude(height=knob_depth, scale=0.85)
                             circle(d=knob_diameter, $fn=128);
                     // knob indentation - your results may vary
-                    // translate([(knob_divot_diameter/2)+1, 0, knob_depth-knob_divot_depth]) {
-                    //     union() {
-                    //         translate([0, 0, 3])
-                    //             rotate_extrude(convexity = 10, $fn = 100)
-                    //                 translate([knob_divot_diameter/2, 0, 0])
-                    //                     circle(r = 3, $fn = 100);
-                    //         linear_extrude(height=10)
-                    //             circle(d=knob_divot_diameter, $fn=128);
-                    //     }
-                    // }
+                    translate([(knob_divot_diameter/2)+1, 0, knob_depth-knob_divot_depth]) {
+                        union() {
+                            translate([0, 0, 3])
+                                rotate_extrude(convexity = 10, $fn = 100)
+                                    translate([knob_divot_diameter/2, 0, 0])
+                                        circle(r = 3, $fn = 100);
+                            linear_extrude(height=10)
+                                circle(d=knob_divot_diameter, $fn=128);
+                        }
+                    }
                     for(n=[0:47]) {
                         rotate([0, -11, n*7.5]) {
                             translate([(knob_diameter/2)-0.3, 0, -1.5]) {
